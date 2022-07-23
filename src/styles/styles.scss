@@ -1,3 +1,4 @@
+// Pallete used: https://coolors.co/2b2d42-e86a92-f7e733-f7f7f9-41e2ba
 * {
     margin: 0;
     padding: 0;
@@ -6,8 +7,8 @@
 }
 
 :root {
-    --color-primary: #02021f;
-    --color-secondary: #27AE60;
+    --color-primary: #2B2D42;
+    --color-secondary: #41E2BA;
     --color-white: #FFFFFF;
     --color-black: #000;
     --color-grey0: #f8f8f8;
@@ -18,7 +19,7 @@
     --color-grey-5: #2a2e35;
     --color-grey-6: #12181b;
     --br-sm-2: 14px;
-    --box-shadow-1: 0 3px 15px rgb(88, 21, 197);
+    --box-shadow-1: 0 3px 15px #E86A92;
 }
 
 body {
@@ -65,41 +66,48 @@ section {
 .sec2 {
     display: none;
     transform: translateY(0) scale(1);
-    background-color: #27AE60;
 }
 
 .sec3 {
     display: none;
     transform: translateY(0) scale(1);
-    background-color: #b2becd;
 }
 
 .sec4 {
     display: none;
     transform: translateY(0) scale(1);
-    background-color: #454e56;
 }
 
 .sec5 {
     display: none;
     transform: translateY(0) scale(1);
-    background-color: #27a5e1;
 }
 
 .active {
     display: block;
+    animation: scalAnim 1s ease-in-out;
+
+    @keyframes scalAnim {
+        0% {
+            transform: translateY(-100%) scaleY(0);
+        }
+
+        100% {
+            transform: translateY(0) scaleY(1);
+        }
+    }
 }
 
 .controls {
     position: fixed;
     z-index: 10;
-    bottom: 3%;
-    left: 50%;
+    right: 3%;
+    top: 50%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    transform: translateX(-50%);
+    transform: translateY(-50%);
 
     .control {
         padding: 1rem;
@@ -111,12 +119,14 @@ section {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 0 .7rem;
+        margin: .7rem 0;
         box-shadow: var(--box-shadow-1);
+        animation: none; // fix-bug ==>button animation with section
 
         i {
             font-size: 1.2rem;
             color: var(--color-grey-2);
+            text-shadow: 0 0px 10px #2B2D42;
             pointer-events: none;
         }
     }
@@ -129,4 +139,124 @@ section {
             color: var(--color-white);
         }
     }
+}
+
+.header-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 100%;
+
+    .left-header {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        .h-shape {
+            transition: all .4s ease-in-out;
+            width: 65%;
+            height: 100%;
+            background-color: #41E2BA;
+            filter: grayscale(30%);
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
+        }
+
+        .image {
+            border-radius: var(--br-sm-2);
+            height: 90%;
+            width: 68%;
+            margin-left: 4rem;
+            background-color: #F7F7F9;
+            box-shadow: 0 3px 130px #E86A92;
+            transition: all .4s ease-in-out;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: all .4s ease-in-out;
+                filter: grayscale(100%);
+
+                &:hover {
+                    filter: grayscale(0);
+                }
+            }
+        }
+    }
+
+    .right-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 18rem;
+
+        .name {
+            font-size: 3rem;
+
+            span {
+                color: var(--color-secondary);
+
+            }
+        }
+
+        p {
+            margin: 1.5rem 0;
+            line-height: 2rem;
+        }
+    }
+}
+
+.btn-con {
+    display: flex;
+    align-self: flex-start;
+}
+
+.main-btn {
+    border-radius: 30px;
+    color: inherit;
+    font-weight: 600;
+    position: relative;
+    border: 1px solid var(--color-secondary);
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    overflow: hidden;
+
+    .btn-text {
+        padding: 0 2rem;
+    }
+
+    .btn-icon {
+        background-color: var(--color-secondary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        padding: 1rem;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateX(100%);
+        transition: all .4s ease-in-out;
+        z-index: -1;
+    }
+
+    &:hover {
+        transition: all .4s ease-in-out;
+
+        &::before {
+            transform: translateX(0);
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-secondary);
+        }
+    }
+
 }
