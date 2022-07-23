@@ -17,6 +17,7 @@
   --color-grey-4: #454e56;
   --color-grey-5: #2a2e35;
   --color-grey-6: #12181b;
+  --color-titanium-yellow: #F7E733;
   --br-sm-2: 14px;
   --box-shadow-1: 0 3px 15px #E86A92;
 }
@@ -37,7 +38,7 @@ a {
 }
 
 header {
-  height: 100vh;
+  height: 60rem;
   color: var(--color-white);
   overflow: hidden;
 }
@@ -73,11 +74,6 @@ section {
 }
 
 .sec4 {
-  display: none;
-  transform: translateY(0) scale(1);
-}
-
-.sec5 {
   display: none;
   transform: translateY(0) scale(1);
 }
@@ -248,4 +244,227 @@ section {
   width: 100%;
   height: 100%;
   background-color: var(--color-secondary);
+}
+
+.main-title {
+  text-align: center;
+}
+.main-title h2 {
+  position: relative;
+  text-transform: uppercase;
+  font-size: 4rem;
+  font-weight: 700;
+}
+.main-title h2 span {
+  color: var(--color-secondary);
+}
+.main-title h2 .bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: var(--color-grey-4);
+  transition: all 0.4s ease-in-out;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  font-weight: 800;
+  font-size: 6.3rem;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 3.5rem;
+  padding-bottom: 5rem;
+}
+.about-container .right-about {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.about-container .right-about .about-item {
+  border: 1px solid var(--color-grey-4);
+  border-radius: 5px;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.1);
+}
+.about-container .right-about .about-item:hover {
+  cursor: default;
+  transform: translateY(-5px);
+  border: 1px solid var(--color-secondary);
+  box-shadow: 1px 4px 15px rgba(0, 0, 0, 0.32);
+}
+.about-container .right-about .about-item .abt-text {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.about-container .right-about .about-item .abt-text .large-text {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+.about-container .right-about .about-item .abt-text .small-text {
+  padding-left: 3rem;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  color: var(--color-grey-1);
+  letter-spacing: 2px;
+}
+.about-container .right-about .about-item .abt-text .small-text::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 0;
+  width: 2rem;
+  height: 2px;
+  background-color: var(--color-titanium-yellow);
+}
+.about-container .left-about {
+  padding-right: 5rem;
+}
+.about-container .left-about p {
+  line-height: 2rem;
+  padding: 1rem;
+  color: var(--color-grey-1);
+}
+.about-container .left-about h4 {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.about-container .left-about ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  position: relative;
+  left: 20px;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+.about-container .left-about ul li {
+  color: var(--color-secondary);
+}
+.about-container .left-about ul li:hover {
+  cursor: default;
+  font-size: 1.5rem;
+  text-shadow: 0 0 10px var(--color-secondary);
+  color: var(--color-titanium-yellow);
+}
+
+.about-ongoing {
+  padding-bottom: 4rem;
+}
+.about-ongoing .progress-bars {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.about-ongoing .progress-bars .progress-bar {
+  display: flex;
+  flex-direction: column;
+}
+.about-ongoing .progress-bars .progress-bar .prog-title {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.about-ongoing .progress-bars .progress-bar .prog-con {
+  display: flex;
+  align-items: center;
+}
+.about-ongoing .progress-bars .progress-bar .prog-text {
+  color: var(--color-grey-2);
+}
+.about-ongoing .progress-bars .progress-bar .progress {
+  width: 100%;
+  height: 0.45rem;
+  background-color: var(--color-grey-3);
+  margin-left: 0.25rem;
+  position: relative;
+}
+.about-ongoing .progress-bars .progress-bar .progress span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--color-secondary);
+  transition: all 0.4s ease-in-out;
+}
+.about-ongoing .progress-bars .progress-bar .progress .portfolio-1 {
+  width: 75%;
+}
+.about-ongoing .progress-bars .progress-bar .progress .portfolio-2 {
+  width: 10%;
+}
+.about-ongoing .progress-bars .progress-bar .progress .dsa {
+  width: 5%;
+}
+
+.start-title {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 3.5rem 0;
+  position: relative;
+}
+.start-title::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 0;
+  width: 40%;
+  height: 1px;
+  background-color: var(--color-grey-4);
+  transform: translateX(-50%);
+}
+
+.about-experience {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding-bottom: 3rem;
+}
+.about-experience .experience-item {
+  position: relative;
+  padding-left: 3rem;
+  border-left: 1px solid var(--color-grey-4);
+}
+.about-experience .experience-item .exp-icon {
+  position: absolute;
+  left: -27px;
+  top: 0;
+  background-color: var(--color-secondary);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-experience .experience-item .exp-icon i {
+  font-size: 1.3rem;
+}
+.about-experience .experience-item .exp-duration {
+  padding: 0.2rem 0.6rem;
+  background-color: var(--color-grey-4);
+  border-radius: 15px;
+  display: inline-block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.about-experience .experience-item h5 {
+  padding: 1rem 0;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.about-experience .experience-item h5 span {
+  color: var(--color-grey-2);
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.about-experience .experience-item p {
+  color: var(--color-grey-2);
 }/*# sourceMappingURL=styles.css.map */
