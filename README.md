@@ -17,3 +17,7 @@
 <a href="https://legend7bot.github.io/portfolio-v1/src/" target="_blank">Project Build</a>
 
 <a href="https://www.youtube.com/watch?v=mU6anWqZJcc" target="_blank">Recommended Tutorial</a>
+
+Visitor-Count:
+![visitors](https://visitor-badge.glitch.me/badge?page_id=legend7bot.portfolio-v1&left_color=green&right_color=red)
+
