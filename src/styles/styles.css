@@ -888,7 +888,7 @@ section {
     margin: 1rem 0.3rem;
   }
 }
-@media screen and (max-width: 1540px) {
+@media screen and (max-width: 1440px) and (min-width: 769px) {
   .section .main-title h2 {
     font-size: 4.6rem !important;
   }
