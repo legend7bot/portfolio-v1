@@ -95,16 +95,7 @@ section {
 
 .active {
   display: block;
-  -webkit-animation: scalAnim 1s ease-in-out;
-          animation: scalAnim 1s ease-in-out;
-}
-@-webkit-keyframes scalAnim {
-  0% {
-    transform: translateY(-100%) scaleY(0);
-  }
-  100% {
-    transform: translateY(0) scaleY(1);
-  }
+  animation: scalAnim 1s ease-in-out;
 }
 @keyframes scalAnim {
   0% {
@@ -138,8 +129,7 @@ section {
   align-items: center;
   margin: 0.7rem 0;
   box-shadow: var(--box-shadow-1);
-  -webkit-animation: none;
-          animation: none;
+  animation: none;
 }
 .controls .control i {
   font-size: 1.2rem;
